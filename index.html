@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parikh Commercial Logistics Pvt Ltd</title>
+
+<style>
+/* ---------- Global Style ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #0e0e12;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 80px 8%;
+}
+
+/* ---------- Premium Gradient Header ---------- */
+.header {
+  width: 100%;
+  min-height: 85vh;
+  background: linear-gradient(160deg,#0d0f14,#151a24,#10141b,#0c0e11);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.header-content {
+  z-index: 5;
+  max-width: 800px;
+  animation: fadeUp 1.5s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(40px); }
+  to { opacity:1; transform:translateY(0px); }
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  margin-bottom: 25px;
+  filter: drop-shadow(0px 0px 12px rgba(255,215,120,0.5));
+}
+
+.header-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #f5d37c;
+  letter-spacing: 1px;
+}
+
+.tagline {
+  font-size: 20px;
+  margin-top: 15px;
+  opacity: 0.9;
+}
+
+/* ---------- Animated Background Truck ---------- */
+.truck {
+  position: absolute;
+  bottom: 40px;
+  left: -300px;
+  width: 260px;
+  opacity: 0.17;
+  animation: truckMove 18s linear infinite;
+}
+
+@keyframes truckMove {
+  0% { left: -400px; opacity: 0; }
+  20% { opacity: 0.2; }
+  50% { opacity: 0.25; }
+  100% { left: 150%; opacity: 0; }
+}
+
+/* ---------- Section Titles ---------- */
+.section-title {
+  font-size: 32px;
+  margin-bottom: 18px;
+  color: #e8c06b;
+  font-weight: 600;
+}
+
+/* ---------- About Section ---------- */
+.about-text {
+  max-width: 900px;
+  font-size: 18px;
+  line-height: 1.7;
+  opacity: 0.93;
+}
+
+/* ---------- Services Grid ---------- */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 22px;
+}
+
+.service-box {
+  background: #14171d;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(6px);
+  transition: 0.4s;
+}
+
+.service-box:hover {
+  transform: translateY(-6px);
+  border-color: #e8c06b;
+  box-shadow: 0px 0px 18px rgba(255,215,120,0.15);
+}
+
+.service-box h3 {
+  font-size: 20px;
+  color: #f6d789;
+  margin-bottom: 10px;
+}
+
+/* ---------- Contact ---------- */
+.contact-box {
+  background: #14171d;
+  padding: 35px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+  max-width: 700px;
+}
+
+.contact-item {
+  margin: 8px 0;
+  font-size: 18px;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 22px;
+  background: #e8c06b;
+  color: #000;
+  border-radius: 6px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background: #ffe19b;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  opacity: 0.55;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ---------- HEADER ---------- -->
+<header class="header">
+  <div class="header-content">
+    <img src="parikh-logo.png" class="logo" alt="Parikh Logistics Logo">
+
+    <h1 class="header-title">Parikh Commercial Logistics Pvt Ltd</h1>
+    <p class="tagline">Reliable • Fast • Professional Logistics Solutions</p>
+  </div>
+
+  <img src="https://i.ibb.co/2gQJ8cM/truck-silhouette.png" class="truck">
+</header>
+
+<!-- ---------- ABOUT ---------- -->
+<section>
+  <h2 class="section-title">About Us</h2>
+  <p class="about-text">
+    Parikh Commercial Logistics Pvt Ltd provides trusted, fast and fully professional 
+    logistics solutions across India. With advanced supply chain coordination, 
+    24×7 support, and high-efficiency operational standards, we ensure 
+    safe and reliable goods transport throughout the country.
+  </p>
+</section>
+
+<!-- ---------- SERVICES ---------- -->
+<section>
+  <h2 class="section-title">Our Services</h2>
+  
+  <div class="services-grid">
+
+    <div class="service-box">
+      <h3>All India Transport</h3>
+      <p>Pan-India FTL / PTL movement with guaranteed safety & timely delivery.</p>
+    </div>
+
+    <div class="service-box">
+      <h3>Door-to-Door Service</h3>
+      <p>Pickup to final delivery — complete handling by our expert logistics team.</p>
+    </div>
+
+    <div class="service-box">
+      <h3>Warehouse & Distribution</h3>
+      <p>Secure warehouse support with efficient inventory coordination.</p>
+    </div>
+
+    <div class="service-box">
+      <h3>Supply Chain Solutions</h3>
+      <p>Customised SCM planning for corporate & industrial clients.</p>
+    </div>
+
+    <div class="service-box">
+      <h3>Goods Insurance</h3>
+      <p>Optional cargo insurance for maximum security and peace of mind.</p>
+    </div>
+
+    <div class="service-box">
+      <h3>Dedicated Support</h3>
+      <p>Real-time coordination & complete transparency throughout the journey.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ---------- CONTACT ---------- -->
+<section>
+  <h2 class="section-title">Contact Us</h2>
+
+  <div class="contact-box">
+    <p class="contact-item">📞 Phone: +91-XXXXXXXXXX</p>
+    <p class="contact-item">📧 Email: parikhcommerciallogistics@gmail.com</p>
+
+    <a href="mailto:parikhcommerciallogistics@gmail.com" class="button">Send Email</a>
+  </div>
+</section>
+
+<footer>
+  © <span id="year"></span> Parikh Commercial Logistics Pvt Ltd — All Rights Reserved.
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
