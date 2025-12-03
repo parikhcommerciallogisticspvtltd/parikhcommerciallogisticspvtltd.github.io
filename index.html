@@ -4,218 +4,192 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Parikh Commercial Logistics Pvt Ltd</title>
+  <meta name="description" content="Parikh Commercial Logistics Pvt Ltd - Reliable • Fast • Professional Logistics Solutions" />
   <style>
     :root{
-      --bg1: #07080b;
-      --bg2: #0f1720;
-      --accent-1: #0A1F44; /* navy */
-      --accent-2: #C99B2A; /* gold */
-      --muted: #bfc7cf;
-      --card: rgba(255,255,255,0.04);
-      --glass: rgba(255,255,255,0.03);
-      --maxw: 1100px;
+      --navy1:#031026;
+      --navy2:#082034;
+      --accent:#C99B2A; /* gold */
+      --muted:#9aa6b2;
+      --bg-grad: linear-gradient(180deg, rgba(3,16,38,1) 0%, rgba(8,32,52,1) 60%, rgba(2,8,18,1) 100%);
+      --glass: rgba(255,255,255,0.04);
+      --maxw:1200px;
+      --radius:14px;
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
     body{
       margin:0;
-      font-family: "Segoe UI", Roboto, system-ui, Arial;
-      background: linear-gradient(180deg,var(--bg1) 0%, var(--bg2) 60%);
-      color:#eef2f6;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      color:#eef6fb;
+      background:var(--bg-grad);
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
       line-height:1.5;
     }
 
-    /* subtle moving gradient behind hero */
-    .animated-bg{
-      position:fixed;
-      inset:0;
-      z-index:0;
-      background: radial-gradient(800px 400px at 10% 20%, rgba(26,115,232,0.06), transparent 8%),
-                  radial-gradient(600px 300px at 90% 80%, rgba(201,155,42,0.04), transparent 8%);
-      pointer-events:none;
-      animation: floatBG 12s linear infinite;
-    }
-    @keyframes floatBG{
-      0%{transform:translateY(0px) rotate(0deg)}
-      50%{transform:translateY(8px) rotate(0.5deg)}
-      100%{transform:translateY(0px) rotate(0deg)}
-    }
-
-    .wrap{position:relative; z-index:2; max-width:var(--maxw); margin:0 auto; padding:18px;}
-
+    /* Page layout */
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:28px 20px;}
     header.hero{
-      min-height:54vh;
+      padding:48px 18px;
+      border-radius:16px;
+      margin-top:22px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      box-shadow: 0 10px 30px rgba(2,8,18,0.6);
       display:flex;
+      gap:24px;
       align-items:center;
       justify-content:center;
-      text-align:center;
-      padding:40px 18px;
-    }
-
-    .hero-inner{
-      width:100%;
-      display:flex;
       flex-direction:column;
-      align-items:center;
-      gap:18px;
-      backdrop-filter: blur(6px);
-      padding:26px;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
     }
 
-    /* logo */
-    .logo{
-      width:160px;
-      height:auto;
-      display:block;
-      filter: drop-shadow(0 10px 22px rgba(0,0,0,0.55));
-    }
-    /* small glow behind logo (subtle) */
-    .logo-glow{
-      position: absolute;
-      width:220px;
-      height:220px;
+    /* subtle animated gradient shapes */
+    .hero::before, .hero::after{
+      content:"";
+      position:absolute;
       border-radius:50%;
-      background: radial-gradient(circle at 40% 30%, rgba(201,155,42,0.14), rgba(26,115,232,0.06) 35%, transparent 50%);
-      z-index:1;
-      top:18%;
-      left:50%;
-      transform:translateX(-50%);
-      pointer-events:none;
-      filter: blur(18px);
+      filter:blur(60px);
+      opacity:0.18;
+      transform:translateZ(0);
     }
+    .hero::before{
+      width:420px; height:420px; right:-80px; top:-120px;
+      background:linear-gradient(180deg, rgba(26,115,232,0.9), rgba(10,31,68,0.6));
+      animation: drift 12s linear infinite;
+    }
+    .hero::after{
+      width:300px; height:300px; left:-80px; bottom:-140px;
+      background:linear-gradient(180deg, rgba(201,155,42,0.95), rgba(201,155,42,0.5));
+      animation: drift 16s linear infinite reverse;
+    }
+    @keyframes drift{ from{transform:translateY(0) rotate(0)} to{transform:translateY(-20px) rotate(15deg)} }
 
-    .brand-title{
-      margin:0;
+    /* Logo */
+    .logo {
+      display:block;
+      width:160px;
+      max-width:45%;
+      height:auto;
+      margin:0 auto;
+      object-fit:contain;
+      filter: none; /* remove any glow */
+      transition: transform .35s ease;
+    }
+    .logo-wrap{display:flex; align-items:center; gap:16px; justify-content:center;}
+    .logo:hover{ transform: translateY(-6px) scale(1.02); }
+
+    h1.title{
+      margin:10px 0 6px;
       font-size:36px;
-      letter-spacing:0.6px;
-      font-weight:700;
-      color:var(--accent-2);
-      z-index:3;
-      text-shadow: 0 8px 20px rgba(0,0,0,0.6);
+      line-height:1.05;
+      color:var(--accent);
+      text-shadow: 0 2px 0 rgba(0,0,0,0.35);
     }
-    .brand-sub{
-      margin:0;
+    p.tag{
+      margin:6px 0 0;
+      color: #cfe6ff;
+      opacity:0.95;
       font-size:16px;
-      color:var(--muted);
-      z-index:3;
     }
 
-    /* animated underline */
-    .brand-sub .bar{
-      display:inline-block;
-      margin-left:8px;
-      height:3px;
-      width:80px;
-      background:linear-gradient(90deg,var(--accent-2),var(--accent-1));
-      border-radius:3px;
-      vertical-align:middle;
-      animation: slide 2.2s infinite;
+    /* Card area */
+    .grid{display:grid; grid-template-columns: 1fr 360px; gap:22px; margin-top:28px;}
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:20px; border-radius:var(--radius);
+      box-shadow: 0 8px 30px rgba(2,8,18,0.5);
+      border: 1px solid rgba(255,255,255,0.03);
     }
-    @keyframes slide{
-      0%{transform:translateX(-10px);opacity:0.3}
-      50%{transform:translateX(0);opacity:1}
-      100%{transform:translateX(10px);opacity:0.3}
-    }
+    .card h2{color:#eaf6ff; margin-top:0}
+    .services li{margin:10px 0; color:var(--muted)}
 
-    main{padding:26px 18px;}
-    .card{background:var(--card); border-radius:12px; padding:22px; margin:18px 0; box-shadow:0 8px 40px rgba(2,6,23,0.5); border:1px solid rgba(255,255,255,0.03)}
-    h2{color:#e6eefb; margin:0 0 12px 0; font-size:20px}
-    p, li{color:var(--muted); font-size:15px}
-    ul{padding-left:18px}
-
-    /* contact row */
-    .contact-row{display:flex; gap:16px; align-items:center; justify-content:space-between; flex-wrap:wrap}
-    .contact-left{font-size:15px; color:var(--muted)}
+    /* contact card */
+    .contact .phone{font-weight:700; color:#fff}
+    .cta-row{display:flex; gap:12px; margin-top:12px; flex-wrap:wrap}
     .btn{
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
-      padding:10px 14px;
-      background: linear-gradient(90deg,var(--accent-1), #1A73E8);
-      color:#fff;
-      border-radius:10px;
-      text-decoration:none;
-      font-weight:600;
-      box-shadow: 0 8px 22px rgba(10,31,68,0.25);
-      transition:transform .18s ease, box-shadow .18s ease;
+      background: linear-gradient(180deg, #1a73e8, #0b57c4);
+      color:white; padding:10px 14px; border-radius:10px; text-decoration:none; font-weight:700;
+      box-shadow: 0 8px 20px rgba(10,31,68,0.35); border:0;
     }
-    .btn.secondary{
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.06);
-      color:var(--muted);
-      box-shadow:none;
+    .btn.alt{
+      background:transparent; border:1px solid rgba(255,255,255,0.06); color:#cfe6ff;
     }
-    .btn:hover{transform:translateY(-4px); box-shadow:0 18px 36px rgba(10,31,68,0.35)}
 
-    footer{color:var(--muted); text-align:center; padding:26px 18px; font-size:14px;}
+    footer{margin:40px 0; text-align:center; color:var(--muted); font-size:14px}
 
-    /* responsive */
-    @media (max-width:720px){
-      .brand-title{font-size:28px}
-      .logo{width:120px}
-      .logo-glow{width:160px;height:160px; top:14%}
-      .hero{min-height:48vh}
+    /* Responsive */
+    @media (max-width:920px){
+      .grid{grid-template-columns: 1fr;}
+      h1.title{font-size:30px}
+      .logo{width:140px}
     }
+    @media (max-width:420px){
+      h1.title{font-size:24px}
+      .logo{width:110px}
+    }
+
+    /* Accessibility focus */
+    a:focus{outline:3px solid rgba(26,115,232,0.18); outline-offset:3px}
   </style>
 </head>
 <body>
+  <div class="wrap">
 
-  <div class="animated-bg" aria-hidden="true"></div>
-
-  <header class="hero" role="banner">
-    <div class="wrap hero-inner" style="position:relative;">
-      <!-- subtle glow element behind logo -->
-      <div class="logo-glow" aria-hidden="true"></div>
-
-      <!-- Put your transparent PNG named exactly parikh-logo.png in same folder -->
-      <img src="parikh-logo.png" alt="Parikh logo" class="logo" />
-
-      <h1 class="brand-title">Parikh Commercial Logistics Pvt Ltd</h1>
-      <p class="brand-sub">Reliable • Fast • Professional Logistics Solutions <span class="bar" aria-hidden="true"></span></p>
-    </div>
-  </header>
-
-  <main class="wrap" role="main">
-    <section class="card" aria-labelledby="about">
-      <h2 id="about">About Us</h2>
-      <p>
-        Parikh Commercial Logistics Pvt Ltd is a trusted logistics & transport partner delivering
-        safe, timely and cost-effective freight solutions across India. We handle FTL / PTL, warehousing,
-        distribution and end-to-end supply chain coordination with transparent communication and professional service.
-      </p>
-    </section>
-
-    <section class="card" aria-labelledby="services">
-      <h2 id="services">Our Services</h2>
-      <ul>
-        <li>All India Commercial Goods Transportation (FTL / PTL)</li>
-        <li>Door-to-Door Delivery & Reverse Logistics</li>
-        <li>Warehouse & Distribution Support</li>
-        <li>Customized Supply Chain Solutions</li>
-        <li>Goods Insurance & Tracking Assistance</li>
-      </ul>
-    </section>
-
-    <section class="card" aria-labelledby="contact">
-      <h2 id="contact">Contact Us</h2>
-      <div class="contact-row">
-        <div class="contact-left">
-          <strong>Email:</strong> <a href="mailto:parikhcommerciallogistics@gmail.com" style="color:inherit; text-decoration:underline;">parikhcommerciallogistics@gmail.com</a><br>
-          <strong>Phone:</strong> +91-XXXXXXXXXX  <!-- replace later -->
-        </div>
-        <div>
-          <a class="btn" href="mailto:parikhcommerciallogistics@gmail.com">Send Email</a>
-          <a class="btn secondary" href="tel:+91XXXXXXXXXX">Call Us</a>
-        </div>
+    <!-- HERO -->
+    <header class="hero" role="banner" aria-label="Parikh Commercial Logistics hero">
+      <div class="logo-wrap" aria-hidden="false">
+        <!-- Put parikh-logo.png in the same folder as this index.html -->
+        <img src="parikh-logo.png" alt="Parikh Commercial Logistics logo" class="logo" onerror="this.style.display='none'">
       </div>
-    </section>
-  </main>
 
-  <footer>
-    © <span id="year"></span> Parikh Commercial Logistics Pvt Ltd. All rights reserved.
-  </footer>
+      <h1 class="title">Parikh Commercial Logistics Pvt Ltd</h1>
+      <p class="tag">Reliable • Fast • Professional Logistics Solutions</p>
+    </header>
+
+    <!-- MAIN GRID -->
+    <main class="grid" role="main" aria-labelledby="main-heading">
+      <section class="card" aria-labelledby="about-heading">
+        <h2 id="about-heading">About Us</h2>
+        <p style="color:var(--muted); margin-top:6px;">
+          Parikh Commercial Logistics Pvt Ltd is a premium logistics partner offering reliable end-to-end transport,
+          warehousing and supply-chain solutions across India. We focus on safety, timely delivery and transparent communication.
+        </p>
+
+        <h3 style="color:#dbeeff; margin-top:16px;">Why choose us</h3>
+        <ul class="services" style="padding-left:18px; margin-top:6px;">
+          <li>Experienced drivers and secure fleet management.</li>
+          <li>FTL / PTL services with real-time coordination.</li>
+          <li>Warehouse and last-mile delivery support.</li>
+          <li>Custom logistics solutions for businesses of all sizes.</li>
+        </ul>
+      </section>
+
+      <aside class="card contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact</h2>
+        <p style="margin:6px 0 0; color:var(--muted)">We are serving pan-India logistics and transport needs.</p>
+
+        <p style="margin-top:12px;">
+          <strong class="phone">Phone:</strong> <span style="color:#fff; font-weight:700">+91-XXXXXXXXXX</span><br>
+          <strong style="color:#cfe6ff">Email:</strong> <a href="mailto:parikhcommerciallogistics@gmail.com" style="color:#cfe6ff; text-decoration:none">parikhcommerciallogistics@gmail.com</a>
+        </p>
+
+        <div class="cta-row">
+          <a class="btn" href="mailto:parikhcommerciallogistics@gmail.com">Send Email</a>
+          <a class="btn alt" href="tel:+91XXXXXXXXXX">Call Us</a>
+        </div>
+
+        <div style="margin-top:18px; color:var(--muted); font-size:13px;">
+          © <span id="year"></span> Parikh Commercial Logistics Pvt Ltd
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      Built with care • Parikh Commercial Logistics Pvt Ltd
+    </footer>
+  </div>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
