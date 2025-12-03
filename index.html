@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Parikh Commercial Logistics Pvt Ltd</title>
+  <style>
+    :root{
+      --navy:#0A1F44;
+      --royal:#1A73E8;
+      --gold:#C99B2A;
+      --bg:#F2F2F2;
+      --card:#ffffff;
+      --text:#222;
+      --muted:#6b6b6b;
+      --maxw:1100px;
+    }
+
+    *{box-sizing:border-box}
+    body{font-family:system-ui,Arial; margin:0; color:var(--text); background:var(--bg);}
+    .header {
+      background: linear-gradient(180deg, rgba(10,31,68,1) 0%, rgba(10,31,68,0.92) 100%);
+      color: white;
+      padding:28px 16px;
+      text-align:center;
+    }
+    .banner {
+      max-width:var(--maxw);
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      gap:20px;
+      justify-content:center;
+      padding:18px;
+    }
+    .logo-img{
+      width:120px;
+      height:auto;
+      display:block;
+      border-radius:6px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+    .brand h1{
+      margin:0;
+      font-size:28px;
+      letter-spacing:1px;
+      color:#ffffff;
+      font-weight:700;
+    }
+    .brand p{
+      margin:6px 0 0 0;
+      color:#e8eefc;
+      font-size:15px;
+      opacity:0.95;
+    }
+
+    .container{max-width:var(--maxw); margin:26px auto; padding:0 18px;}
+    .card{background:var(--card); border-radius:12px; padding:22px; margin:18px 0; box-shadow:0 6px 20px rgba(10,31,68,0.06);}
+    h2{color:var(--royal); margin-top:0;}
+    ul{padding-left:18px; margin:8px 0 0 0;}
+    li{margin:8px 0;}
+
+    .contact{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+    }
+    a.button{
+      display:inline-block;
+      padding:11px 16px;
+      background:var(--royal);
+      color:white;
+      text-decoration:none;
+      border-radius:8px;
+      font-weight:600;
+    }
+
+    footer{max-width:var(--maxw); margin:22px auto 60px; color:var(--muted); text-align:center; font-size:14px;}
+
+    @media (max-width:720px){
+      .banner{flex-direction:column; gap:12px; padding:14px}
+      .logo-img{width:100px}
+      .brand h1{font-size:22px}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="banner">
+      <img class="logo-img" src="parikh-logo.png" alt="Parikh Commercial Logistics logo">
+      <div class="brand">
+        <h1>Parikh Commercial Logistics Pvt Ltd</h1>
+        <p>All India Transport & Supply Chain Solutions</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>About Us</h2>
+      <p>
+        Parikh Commercial Logistics Pvt Ltd is a trusted logistics and transport partner delivering
+        timely, safe and cost-effective freight solutions across India. We manage Full Truck Load (FTL),
+        Part Truck Load (PTL), warehousing support and end-to-end supply chain operations.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Our Services</h2>
+      <ul>
+        <li>All India Commercial Goods Transportation (FTL / PTL)</li>
+        <li>Door-to-Door Delivery</li>
+        <li>Warehouse & Distribution Support</li>
+        <li>Customized Supply Chain Solutions</li>
+        <li>Goods Insurance & Tracking Assistance</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Contact Us</h2>
+      <p><strong>Phone:</strong> +91-XXXXXXXXXX<br>
+         <strong>Email:</strong> <a href="mailto:parikhcommerciallogistics@gmail.com">parikhcommerciallogistics@gmail.com</a>
+      </p>
+      <a class="button" href="mailto:parikhcommerciallogistics@gmail.com">Send Email</a>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Parikh Commercial Logistics Pvt Ltd. All rights reserved.
+  </footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
