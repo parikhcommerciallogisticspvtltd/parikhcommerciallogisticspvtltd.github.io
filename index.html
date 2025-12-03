@@ -17,7 +17,7 @@
     }
 
     *{box-sizing:border-box}
-    body{font-family:system-ui,Arial; margin:0; color:var(--text); background:var(--bg);}
+    body{font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; color:var(--text); background:var(--bg);}
     .header {
       background: linear-gradient(180deg, rgba(10,31,68,1) 0%, rgba(10,31,68,0.92) 100%);
       color: white;
@@ -32,6 +32,12 @@
       gap:20px;
       justify-content:center;
       padding:18px;
+      background:transparent;
+    }
+    .logo-wrap{
+      display:flex;
+      align-items:center;
+      gap:18px;
     }
     .logo-img{
       width:120px;
@@ -39,6 +45,10 @@
       display:block;
       border-radius:6px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+    .brand {
+      text-align:left;
+      line-height:1;
     }
     .brand h1{
       margin:0;
@@ -49,7 +59,7 @@
     }
     .brand p{
       margin:6px 0 0 0;
-      color:#e8eefc;
+      color: #e8eefc;
       font-size:15px;
       opacity:0.95;
     }
@@ -59,7 +69,6 @@
     h2{color:var(--royal); margin-top:0;}
     ul{padding-left:18px; margin:8px 0 0 0;}
     li{margin:8px 0;}
-
     .contact{
       display:flex;
       gap:20px;
@@ -76,24 +85,19 @@
       border-radius:8px;
       font-weight:600;
     }
-
     footer{max-width:var(--maxw); margin:22px auto 60px; color:var(--muted); text-align:center; font-size:14px;}
-
-    @media (max-width:720px){
-      .banner{flex-direction:column; gap:12px; padding:14px}
-      .logo-img{width:100px}
-      .brand h1{font-size:22px}
-    }
   </style>
 </head>
 <body>
 
   <header class="header">
     <div class="banner">
-      <img class="logo-img" src="parikh-logo.png" alt="Parikh Commercial Logistics logo">
-      <div class="brand">
-        <h1>Parikh Commercial Logistics Pvt Ltd</h1>
-        <p>All India Transport & Supply Chain Solutions</p>
+      <div class="logo-wrap">
+        <img class="logo-img" src="parikh-logo.png" alt="Parikh Commercial Logistics logo">
+        <div class="brand">
+          <h1>Parikh Commercial Logistics Pvt Ltd</h1>
+          <p>All India Transport & Supply Chain Solutions</p>
+        </div>
       </div>
     </div>
   </header>
@@ -104,7 +108,8 @@
       <p>
         Parikh Commercial Logistics Pvt Ltd is a trusted logistics and transport partner delivering
         timely, safe and cost-effective freight solutions across India. We manage Full Truck Load (FTL),
-        Part Truck Load (PTL), warehousing support and end-to-end supply chain operations.
+        Part Truck Load (PTL), warehousing support and end-to-end supply chain coordination with
+        transparent communication and professional service.
       </p>
     </section>
 
@@ -112,7 +117,7 @@
       <h2>Our Services</h2>
       <ul>
         <li>All India Commercial Goods Transportation (FTL / PTL)</li>
-        <li>Door-to-Door Delivery</li>
+        <li>Door-to-Door Delivery & Reverse Logistics</li>
         <li>Warehouse & Distribution Support</li>
         <li>Customized Supply Chain Solutions</li>
         <li>Goods Insurance & Tracking Assistance</li>
@@ -122,9 +127,10 @@
     <section class="card">
       <h2>Contact Us</h2>
       <p><strong>Phone:</strong> +91-XXXXXXXXXX<br>
-         <strong>Email:</strong> <a href="mailto:parikhcommerciallogistics@gmail.com">parikhcommerciallogistics@gmail.com</a>
-      </p>
+         <strong>Email:</strong> parikhcommerciallogistics@gmail.com</p>
+
       <a class="button" href="mailto:parikhcommerciallogistics@gmail.com">Send Email</a>
+      <a class="button" href="tel:+91XXXXXXXXXX" style="background:#0A1F44">Call Us</a>
     </section>
   </main>
 
